@@ -1,0 +1,60 @@
+.card-item { 
+    display: flex;  
+    flex-direction: column; 
+    max-width: 360px;
+    height: 544px;    
+    position: relative; 
+    margin: 0 auto;    
+}
+.card-item_image {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-item_img {
+    height: 60%;
+    display: block;
+    margin: 0 auto;
+}
+.card-item_name {
+    font-family: 'Eudoxus Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+    color: #AFADB5;
+    margin: 0;
+    margin-top: 26px;    
+    padding: 0;
+}
+.card-item_font {
+    font-family: 'Eudoxus Sans', sans-serif;
+    font-style: normal;
+}
+.card-item_title {    
+    font-weight: 700;
+    font-size: 20px;    
+}
+.card-item_subtitle {    
+    font-family: 'Eudoxus Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 130%;
+    color: #AFADB5;
+    margin-bottom: 0;
+}
+.card-item_description {
+    font-weight: 500;
+    font-size: 14px;    
+    color: #AFADB5;
+}
+.card-item_content {    
+    font-weight: 700;
+    font-size: 24px; 
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+}
