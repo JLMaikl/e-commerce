@@ -3,9 +3,9 @@ import classNames from "classnames";
 
 import "./CardPage.css";
 
-const CardPage = ({ users }: any) => {
+const CardPage = ({ cards }: any) => {
   const { id } = useParams();
-  const page = users.find((user: any) => user.id == id);
+  const page = cards.find((user: any) => user.id == id);
 
   return (
     <div className={ classNames("cardPage-item") } key={ page.id } style={{ textDecoration: "none" }}>

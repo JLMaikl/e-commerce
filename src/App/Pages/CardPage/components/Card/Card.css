@@ -1,11 +1,20 @@
 .card-item { 
+    /* display: flex;  
+    flex-direction: column; 
+    max-width: 360px;
+    height: 544px;    
+    position: relative;  */
+    margin: 0 auto;    
+    
+}
+.card-item_wrapper {
     display: flex;  
     flex-direction: column; 
     max-width: 360px;
-    height: 544px; 
-    border: 2px solid red; 
+    height: 544px;    
     position: relative; 
-    margin: 0 auto;   
+    margin: 0 auto; 
+    padding: 2%;
 }
 .card-item_image {
     width: 100%;
