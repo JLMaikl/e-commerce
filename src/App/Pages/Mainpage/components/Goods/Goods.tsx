@@ -25,6 +25,7 @@ const Goods = ({ cards, loading }: CardProps []) => {
     <div className={classNames("goods-wrapper")}>
       {cards.map((card: any) => <Link to={`/card/${card.id}`} key={card.id} style={{ textDecoration: 'none' }}><Card image={card.image} title={card.title} category={card.category} description={card.description} price={card.price} key={card.id}/></Link>)}      
     </div>
+    
     );
 }
 
