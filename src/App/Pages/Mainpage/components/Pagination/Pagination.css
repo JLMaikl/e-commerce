@@ -4,9 +4,6 @@
     padding: 0;    
 }
 .pageItem {
-    /* width: 10px;
-    height: 10px;
-    padding: 10px; */
     border: 1px solid grey;
     border-radius: 1%;
     display: inline-block;

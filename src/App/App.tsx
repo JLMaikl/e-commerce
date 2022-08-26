@@ -17,6 +17,8 @@ function App() {
       const result = await axios({
         method: "get",
         url: "https://fakestoreapi.com/products",
+      }).catch((err) => {
+        console.log(err);
       });
       setCards(result.data);
       setLoading(false);
