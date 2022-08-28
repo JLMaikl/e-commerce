@@ -1,27 +1,41 @@
 import { useState, useEffect } from "react";
 
 import axios from "axios";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+import CardPage from "./Pages/CardPage";
 import "./App.css";
+import MainPage from "./Pages/MainPage";
 
 function App() {
-  const [users, setUsers] = useState([]);
+  const [cards, setCards] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetch = async () => {
+      setLoading(true);
       const result = await axios({
         method: "get",
         url: "https://fakestoreapi.com/products",
-      })
-      setUsers(result.data);
-    }
-    fetch()
+      }).catch((err) => {
+        console.log(err);
+      });
+      setCards(result.data);
+      setLoading(false);
+    };
+    fetch();
   }, []);
 
   return (
-    <div className="App">
-      srtydrtyeryerdtyudtyururu
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage cards={cards} loading={loading}/>} />
+        <Route path="/card">
+          <Route path=":id" element={<CardPage cards={cards} />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
