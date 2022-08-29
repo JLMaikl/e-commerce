@@ -13,7 +13,7 @@ type CardProps = {
   id: number;
 };
 
-const Card = ({ image, title, category, description, price, id }: CardProps) => {
+const Card = ({image, title, category, description, price, id}: CardProps) => {
   return (
     <div className={classNames(styles.cardItem)} key={id} >
       <div className={classNames(styles.cardItemWrapper)}>
