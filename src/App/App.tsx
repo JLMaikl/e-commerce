@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import axios from "axios";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -31,7 +31,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage cards={cards} loading={loading}/>} />
         <Route path="/card">
-          <Route path=":id" element={<CardPage cards={cards} />} />
+          <Route path=":id" element={<CardPage />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
