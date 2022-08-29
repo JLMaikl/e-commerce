@@ -1,3 +1,5 @@
+@import "@styles/variables";
+
 .cardPageItem { 
     display: flex;    
     max-width: 60%;
@@ -9,10 +11,6 @@
     
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);   
 }
-/* .cardPageItemImage {   
-    margin-top: 5%; 
-    width: 40%;
-} */
 .cardPageItemImg {
     max-width: 80%;
     height: 80%;
@@ -27,10 +25,10 @@
 .cardItemName {
     font-family: 'Eudoxus Sans', sans-serif;
     font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: $font-weight7;
+    font-size: $font-size18;
     line-height: 130%;
-    color: #AFADB5;
+    color: $ligth-grey;
     margin: 0;
     margin-top: 26px;    
     padding: 0;
@@ -40,26 +38,26 @@
     font-style: normal;
 }
 .cardItemTitle {    
-    font-weight: 700;
+    font-weight: $font-weight7;
     font-size: 20px;    
 }
 .cardItemSubtitle {    
     font-family: 'Eudoxus Sans';
     font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: $font-weight7;
+    font-size: $font-size18;
     line-height: 130%;
-    color: #AFADB5;
+    color: $ligth-grey;
     margin-bottom: 0;
 }
 .cardItemDescription {
-    font-weight: 500;
-    font-size: 14px;    
-    color: #AFADB5;
+    font-weight: $font-weight5;
+    font-size: $font-size14;    
+    color: $ligth-grey;
 }
 .cardPageItemContent {    
-    font-weight: 700;
-    font-size: 24px; 
+    font-weight: $font-weight7;
+    font-size: $font-size24; 
     margin: 0;
     position: absolute;
     bottom: 220px;

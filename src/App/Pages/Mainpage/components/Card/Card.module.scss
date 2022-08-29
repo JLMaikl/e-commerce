@@ -1,3 +1,5 @@
+@import "@styles/variables";
+
 .cardItem {    
     margin: 0 auto;  
 
@@ -30,7 +32,7 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 130%;
-    color: #AFADB5;
+    color: $ligth-grey;
     margin: 0;
     margin-top: 26px;    
     padding: 0;
@@ -40,26 +42,26 @@
     font-style: normal;
 }
 .cardItemTitle {    
-    font-weight: 700;
-    font-size: 20px;    
+    font-weight: $font-weight7;
+    font-size: $font-size20;    
 }
 .cardItemSubtitle {    
     font-family: 'Eudoxus Sans';
     font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: $font-weight7;
+    font-size: $font-size18;
     line-height: 130%;
-    color: #AFADB5;
+    color: $ligth-grey;
     margin-bottom: 0;
 }
 .cardItemDescription {
-    font-weight: 500;
-    font-size: 14px;    
-    color: #AFADB5;
+    font-weight: $font-weight5;
+    font-size: $font-size14;    
+    color: $ligth-grey;
 }
 .cardItemContent {    
-    font-weight: 700;
-    font-size: 24px; 
+    font-weight: $font-weight7;
+    font-size: $font-size24; 
     margin: 0;
     position: absolute;
     bottom: 10px;

@@ -2,7 +2,7 @@ import React from "react";
 
 import classNames from "classnames";
 
-import styles from "./Pagination.module.css";
+import styles from "./Pagination.module.scss";
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }: any) => {
   const pageNumbers = [];

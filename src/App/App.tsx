@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
+import CardPage from "@pages/CardPage";
+import MainPage from "@pages/MainPage";
 import axios from "axios";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import CardPage from "@pages/CardPage";
-import "./App.css";
-import MainPage from "@pages/MainPage";
+import "./App.scss";
 
 function App() {
   const [cards, setCards] = useState([]);

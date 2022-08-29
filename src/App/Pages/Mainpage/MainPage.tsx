@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import Goods from "./components/Goods";
 import Pagination from "./components/Pagination";
-import styles from "./MainPage.module.css";
+import styles from "./MainPage.module.scss";
 
 type CardProps = {
   cards: [];

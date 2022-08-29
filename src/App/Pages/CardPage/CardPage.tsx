@@ -4,7 +4,7 @@ import axios from "axios";
 import classNames from "classnames";
 import { useParams } from "react-router-dom";
 
-import styles from "./CardPage.module.css";
+import styles from "./CardPage.module.scss";
 
 const CardPage = () => {
   const [card, setCard] = useState([]);

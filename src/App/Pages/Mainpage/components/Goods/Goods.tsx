@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 
 import Card from "../Card";
-import styles from "./Goods.module.css";
+import styles from "./Goods.module.scss";
 
 type CardProps = {
   image: string;

@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
 import Card from "../Card";
-import styles from "./Goods.module.css";
+import styles from "./Goods.module.scss";
 
 type CardProps = {
   image: string;

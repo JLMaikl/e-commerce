@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-import styles from "./Card.module.css";
+import styles from "./Card.module.scss";
 
 type CardProps = {
   image: string;
