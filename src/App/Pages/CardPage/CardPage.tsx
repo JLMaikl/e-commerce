@@ -4,7 +4,7 @@ import axios from "axios";
 import classNames from "classnames";
 import { useParams } from "react-router-dom";
 
-import "./CardPage.css";
+import styles from "./CardPage.module.css";
 
 const CardPage = () => {
   const [card, setCard] = useState([]);
@@ -32,20 +32,24 @@ const CardPage = () => {
   }
 
   return (
-    <div className={classNames("cardPage-item")} key={card.id} style={{textDecoration: "none"}}>
+    <div className={classNames(styles.cardPageItem)} key={card.id}>
       <div className={classNames("cardPage-item_image")}>
-        <img src={card.image} alt="title" className={classNames("cardPage-item_img")} />
+        <img
+          src={card.image}
+          alt="title"
+          className={classNames(styles.cardPageItemImg)}
+        />
       </div>
-      <div className="cardPage-item_wrapper">
-        <h2 className={classNames("card-item_subtitle")}>{card.category}</h2>
-        <h2 className={classNames("card-item_title")}>{card.title}</h2>
+      <div className={classNames(styles.cardPageItemWrapper)}>
+        <h2 className={classNames(styles.cardItemSubtitle)}>{card.category}</h2>
+        <h2 className={classNames(styles.cardItemTitle)}>{card.title}</h2>
         <div>
-          <div className={classNames("card-item_description")}>{card.description}</div>
-          <p className={classNames("cardPage-item_content")}>${card.price}</p>
+          <div className={classNames(styles.cardItemDescription)}>{card.description}</div>
+          <p className={classNames(styles.cardPageItemContent)}>${card.price}</p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default CardPage;

@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import classNames from "classnames";
 
-import "./MainPage.css";
 import Goods from "./components/Goods";
 import Pagination from "./components/Pagination";
+import styles from "./MainPage.module.css";
 
 type CardProps = {
   cards: [];
@@ -23,7 +23,7 @@ const MainPage = ({ cards, loading }: CardProps) => {
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
-    <div className={classNames("goods-container")}>
+    <div className={classNames(styles.goodsContainer)}>
       <Goods cards={currentPosts} loading={loading} />
       <Pagination
         postsPerPage={postsPerPage}

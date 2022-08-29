@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Link } from "react-router-dom";
-import "./Card.css";
+import styles from "./Card.module.css";
 
 type CardProps = {
   image: string;
@@ -16,16 +16,16 @@ type CardProps = {
 const Card = ({ image, title, category, description, price, id }: CardProps) => {
   return (
     <Link to={`/card/${id}`} key={id}>
-      <div className={classNames("card-item")}>
-        <div className="card-item_wrapper">
-          <div className={classNames("card-item_image")}>
-            <img src={image} alt="title" className={classNames("card-item_img")} />
+      <div className={classNames(styles.cardItem)}>
+        <div className={classNames(styles.cardItemWrapper)}>
+          <div className={classNames(styles.cardItemImage)}>
+            <img src={image} alt="title" className={classNames(styles.cardItemImg)} />
           </div>
-          <h2 className={classNames("card-item_subtitle")}>{category}</h2>
-          <h2 className={classNames("card-item_title")}>{title}</h2>
+          <h2 className={classNames(styles.cardItemSubtitle)}>{category}</h2>
+          <h2 className={classNames(styles.cardItemTitle)}>{title}</h2>
           <div>
-            <div className={classNames("card-item_description")}>{description.substring(0, 200)}</div>
-            <p className={classNames("card-item_content")}>${price}</p>
+            <div className={classNames(styles.cardItemDescription)}>{description.substring(0, 200)}</div>
+            <p className={classNames(styles.cardItemContent)}>${price}</p>
           </div>
         </div>
       </div>
