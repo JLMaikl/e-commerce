@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import CardPage from "./Pages/CardPage";
+import CardPage from "@pages/CardPage";
 import "./App.css";
-import MainPage from "./Pages/MainPage";
+import MainPage from "@pages/MainPage";
 
 function App() {
   const [cards, setCards] = useState([]);

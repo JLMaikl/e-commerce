@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { Link } from "react-router-dom";
 
 import styles from "./Card.module.css";
 
