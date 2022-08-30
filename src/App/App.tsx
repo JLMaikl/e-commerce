@@ -1,35 +1,12 @@
-import React, { useState, useEffect } from "react";
-
 import CardPage from "@pages/CardPage";
 import MainPage from "@pages/MainPage";
-import axios from "axios";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import "./App.scss";
-
 function App() {
-  const [cards, setCards] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const fetch = async () => {
-      setLoading(true);
-      const result = await axios({
-        method: "get",
-        url: "https://fakestoreapi.com/products",
-      }).catch((err) => {
-        console.log(err);
-      });
-      setCards(result.data);
-      setLoading(false);
-    };
-    fetch();
-  }, []);
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainPage cards={cards} loading={loading}/>} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/card">
           <Route path=":id" element={<CardPage />} />
         </Route>

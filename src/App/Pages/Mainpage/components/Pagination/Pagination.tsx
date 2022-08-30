@@ -10,12 +10,16 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }: any) => {
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
   }
+
   return (
     <nav>
       <ul className={classNames(styles.pagination)}>
         {pageNumbers.map((number) => (
           <li key={number} className={classNames(styles.pageItem)}>
-            <div onClick={() => paginate(number)} className={classNames(styles.pageLink)}>
+            <div
+              onClick={() => paginate(number)}
+              className={classNames(styles.pageLink)}
+            >
               {number}
             </div>
           </li>

@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Card from "../Card";
 import styles from "./Goods.module.scss";
 
-type CardProps = {
+type CardProps2 = {
   image: string;
   title: React.ReactNode;
   description?: React.ReactNode;
@@ -11,13 +11,20 @@ type CardProps = {
   price: string;
   category: React.ReactNode;
   id: number;
+  loading: boolean;
 };
 
-const Goods = ({ users }: CardProps[]) => {
+type CardProps = {
+  users: CardProps2[];
+  paginate: () => void;
+  loading: boolean;
+};
+
+const Goods = ({ users }: CardProps) => {
   return (
-    <div className={classNames(styles.goods-wrapper)}>
+    <div className={classNames(styles.goodsWrapper)}>
       {users.map((user: any) => (
-        <Card 
+        <Card
           image={user.image}
           title={user.title}
           category={user.category}

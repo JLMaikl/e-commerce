@@ -1,31 +1,24 @@
 import React, { useState, useEffect } from "react";
 
+import cardStore from "@store/cardStore";
 import axios from "axios";
 import classNames from "classnames";
+import { observer } from "mobx-react-lite";
 import { useParams } from "react-router-dom";
 
 import styles from "./CardPage.module.scss";
 
-const CardPage = () => {
+const CardPage = observer(() => {
   const [card, setCard] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const { id } = useParams();
 
   useEffect(() => {
-    const fetch = async () => {
-      setLoading(true);
-      const result: any = await axios({
-        method: "get",
-        url: `https://fakestoreapi.com/products/${id}`,
-      }).catch((err: any) => {
-        console.log(err);
-      });
-      setCard(result.data);
-      setLoading(false);
-    };
-    fetch();
-  }, []);
+    cardStore.fetchCard(id);
+    setCard(cardStore.card);
+    setLoading(false);
+  }, [id]);
 
   if (loading) {
     return <h2>Loading...</h2>;
@@ -33,23 +26,29 @@ const CardPage = () => {
 
   return (
     <div className={classNames(styles.cardPageItem)} key={card.id}>
-      <div className={classNames("cardPage-item_image")}>
+      <div className={classNames(styles.cardPageItemImage)}>
         <img
-          src={card.image}
+          src={cardStore.card.image}
           alt="title"
           className={classNames(styles.cardPageItemImg)}
         />
       </div>
       <div className={classNames(styles.cardPageItemWrapper)}>
-        <h2 className={classNames(styles.cardItemSubtitle)}>{card.category}</h2>
+        <h2 className={classNames(styles.cardItemSubtitle)}>
+          {cardStore.card.category}
+        </h2>
         <h2 className={classNames(styles.cardItemTitle)}>{card.title}</h2>
         <div>
-          <div className={classNames(styles.cardItemDescription)}>{card.description}</div>
-          <p className={classNames(styles.cardPageItemContent)}>${card.price}</p>
+          <div className={classNames(styles.cardItemDescription)}>
+            {cardStore.card.description}
+          </div>
+          <p className={classNames(styles.cardPageItemContent)}>
+            ${cardStore.card.price}
+          </p>
         </div>
       </div>
     </div>
   );
-};
+});
 
 export default CardPage;
