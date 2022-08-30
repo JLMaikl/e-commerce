@@ -14,7 +14,6 @@ const MainPage = observer(() => {
   const [postsPerPage] = useState(3);
 
   useEffect(() => {
-    cardsStore.fetchCards();
     setLoading(false);
   }, []);
 

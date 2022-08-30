@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import cardStore from "@store/cardStore";
-import axios from "axios";
 import classNames from "classnames";
 import { observer } from "mobx-react-lite";
 import { useParams } from "react-router-dom";
@@ -9,14 +8,12 @@ import { useParams } from "react-router-dom";
 import styles from "./CardPage.module.scss";
 
 const CardPage = observer(() => {
-  const [card, setCard] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const { id } = useParams();
 
   useEffect(() => {
     cardStore.fetchCard(id);
-    setCard(cardStore.card);
     setLoading(false);
   }, [id]);
 
@@ -25,7 +22,7 @@ const CardPage = observer(() => {
   }
 
   return (
-    <div className={classNames(styles.cardPageItem)} key={card.id}>
+    <div className={classNames(styles.cardPageItem)} key={cardStore.card.id}>
       <div className={classNames(styles.cardPageItemImage)}>
         <img
           src={cardStore.card.image}
@@ -37,7 +34,9 @@ const CardPage = observer(() => {
         <h2 className={classNames(styles.cardItemSubtitle)}>
           {cardStore.card.category}
         </h2>
-        <h2 className={classNames(styles.cardItemTitle)}>{card.title}</h2>
+        <h2 className={classNames(styles.cardItemTitle)}>
+          {cardStore.card.title}
+        </h2>
         <div>
           <div className={classNames(styles.cardItemDescription)}>
             {cardStore.card.description}

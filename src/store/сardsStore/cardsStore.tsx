@@ -10,7 +10,7 @@ class CardsStore {
 
   fetchCards() {
     const fetch = async () => {
-      const result = await axios({
+      const result: any = await axios({
         method: "get",
         url: "https://fakestoreapi.com/products",
       }).catch((err) => {
